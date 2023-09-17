@@ -5,12 +5,17 @@ using UnityEngine.UI;
 
 public class MenuAction : MonoBehaviour
 {
-    [SerializeField] Image Menu;
-    [SerializeField] Image TrainingMenu;
-    [SerializeField] Image FightMenu;
+    [SerializeField] GameObject menu;
+    [SerializeField] GameObject trainingMenu;
+    [SerializeField] GameObject fightMenu;
+    [SerializeField] GameObject character;
+    [SerializeField] GameObject healthBar;
     // Start is called before the first frame update
     void Start()
     {
+        menu.SetActive(true);
+        trainingMenu.SetActive(false);
+        fightMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -24,7 +29,8 @@ public class MenuAction : MonoBehaviour
     }
     public void Training()
     {
-
+        menu.SetActive(false);
+        trainingMenu.SetActive(true);
     }
     public void Store()
     {
@@ -40,6 +46,14 @@ public class MenuAction : MonoBehaviour
     }
     public void Fight()
     {
-
+        menu.SetActive(false);
+        trainingMenu.SetActive(false);
+        fightMenu.SetActive(true);
+    }
+    public void Backward()
+    {
+        menu.SetActive(true);
+        trainingMenu.SetActive(false);
+        fightMenu.SetActive(false);
     }
 }
